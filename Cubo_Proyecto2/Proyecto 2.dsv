@@ -1,0 +1,370 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0967b85f-bae2-4a01-9a2e-6a2026859cf1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Proyecto 2</ID>
+  <Name>Proyecto 2</Name>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-5861" scrolltop="571" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="20161" y="9763" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Facturas" left="5812" top="4279" logicalid="12" controlid="1" masterid="0" hint1="0" hint2="0" width="3307" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000eb0c000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_Facturas" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Gaseosa" left="11519" top="5628" logicalid="13" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_Gaseosa" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Pais" left="5965" top="0" logicalid="14" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_Pais" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Sector" left="5965" top="11679" logicalid="15" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_Sector" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Supervisor" left="206" top="3489" logicalid="16" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_Supervisor" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Vendedor" left="0" top="7768" logicalid="17" controlid="6" masterid="0" hint1="0" hint2="0" width="3413" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000550d0000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_Vendedor" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3113" top="6479" logicalid="18" controlid="7" masterid="0" hint1="0" hint2="0" width="2999" height="2840" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Facturas_Vendedor]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="13" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="3413" y="8919" />
+                    <point x="4612" y="8919" />
+                    <point x="4612" y="6779" />
+                    <point x="5812" y="6779" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="7066" top="1380" logicalid="19" controlid="8" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Facturas_Pais]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="7465" y="1879" />
+                    <point x="7465" y="4279" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8819" top="6380" logicalid="20" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Facturas_Gaseosa]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="12" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="11519" y="6779" />
+                    <point x="9119" y="6779" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="7066" top="8979" logicalid="21" controlid="10" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Facturas_Sector]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="7465" y="11679" />
+                    <point x="7465" y="9279" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1307" top="4869" logicalid="22" controlid="11" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Vendedor_Supervisor]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="6" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="1706" y="5368" />
+                    <point x="1706" y="7768" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-5861</DiagramViewPortLeft>
+            <DiagramViewPortTop>571</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>75</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Proyecto 2</DataSourceID>
+  <Schema>
+    <xs:schema id="Proyecto_x0020_2" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Proyecto_x0020_2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="f64527b1-445e-42a1-9303-46db26ac597c">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Facturas" msprop:DbSchemaName="dbo" msprop:design-time-name="033c3135-d9ab-4072-a812-613210cecd2d" msprop:FriendlyName="Facturas" msprop:TableType="Table" msprop:DbTableName="Facturas">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IdFactura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="IdFactura" msprop:DbColumnName="IdFactura" msprop:design-time-name="d3c9d513-45dd-40cd-bde3-14a506eede84" type="xs:int" />
+                  <xs:element name="NumeroSerie" msprop:FriendlyName="NumeroSerie" msprop:DbColumnName="NumeroSerie" msprop:design-time-name="bcf5339d-43e5-4e57-8747-9d6a9ca5c2a2" type="xs:long" />
+                  <xs:element name="Numero" msprop:FriendlyName="Numero" msprop:DbColumnName="Numero" msprop:design-time-name="82f16c25-70e0-496e-bac6-af74e06437d9" type="xs:long" />
+                  <xs:element name="FechaF" msprop:FriendlyName="FechaF" msprop:DbColumnName="FechaF" msprop:design-time-name="fea406f5-1b2d-4dbf-b793-b786f90ce23e">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CodigoSector" msprop:FriendlyName="CodigoSector" msprop:DbColumnName="CodigoSector" msprop:design-time-name="5ad83d3d-1151-43bc-8474-7fea742aa458" type="xs:int" />
+                  <xs:element name="CodigoPais" msprop:FriendlyName="CodigoPais" msprop:DbColumnName="CodigoPais" msprop:design-time-name="b0aa05a3-4c44-4a5b-b17b-e099a64705ec" type="xs:int" />
+                  <xs:element name="CodigoVendedor" msprop:FriendlyName="CodigoVendedor" msprop:DbColumnName="CodigoVendedor" msprop:design-time-name="872f0f8d-d1fd-423a-ba3e-8dcf832cb296" type="xs:int" />
+                  <xs:element name="CodigoGaseosa" msprop:FriendlyName="CodigoGaseosa" msprop:DbColumnName="CodigoGaseosa" msprop:design-time-name="eb707419-e51b-46a9-a604-8e271b597793" type="xs:int" />
+                  <xs:element name="Ppto" msprop:FriendlyName="Ppto" msprop:DbColumnName="Ppto" msprop:design-time-name="aa05408f-9178-479e-a3e2-a89952803b46" type="xs:double" />
+                  <xs:element name="Cantidad" msprop:FriendlyName="Cantidad" msprop:DbColumnName="Cantidad" msprop:design-time-name="693cd303-8da6-4304-a709-ce2271f453ad" type="xs:double" />
+                  <xs:element name="Merma" msprop:FriendlyName="Merma" msprop:DbColumnName="Merma" msprop:design-time-name="c1c334cc-ce08-4829-b0c5-cfd7babb8ea7" type="xs:int" />
+                  <xs:element name="Subtotal" msprop:FriendlyName="Subtotal" msprop:DbColumnName="Subtotal" msprop:design-time-name="d45e0a23-3ccf-4569-b257-cf5c4cc89709" type="xs:decimal" />
+                  <xs:element name="IGV" msprop:FriendlyName="IGV" msprop:DbColumnName="IGV" msprop:design-time-name="51bdd3db-632a-4f1b-bec3-74d92bf25e56" type="xs:decimal" />
+                  <xs:element name="Total" msprop:FriendlyName="Total" msprop:DbColumnName="Total" msprop:design-time-name="7946740c-cd2f-4d7c-a597-7adec1a3eb91" type="xs:decimal" />
+                  <xs:element name="Rentabilidad" msdata:ReadOnly="true" msprop:DbColumnName="Rentabilidad" msprop:IsLogical="True" msprop:design-time-name="b163589f-8c21-4c69-a1e6-5a623a7c79c8" msprop:Description="" msprop:ComputedColumnExpression="Subtotal - (Merma/Total)" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Ingreso_x0020_Neto" msdata:ReadOnly="true" msprop:DbColumnName="Ingreso Neto" msprop:IsLogical="True" msprop:design-time-name="0191172d-2f1f-45ab-a1fb-0d750bfa2b19" msprop:Description="" msprop:ComputedColumnExpression="Total - Merma" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Ventas_x0020_con_x0020_Impuesto" msdata:ReadOnly="true" msprop:Description="" msprop:design-time-name="c9187371-5899-488d-86b4-368afec3a627" msprop:IsLogical="True" msprop:DbColumnName="Ventas con Impuesto" msprop:ComputedColumnExpression="Total + IGV" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Gaseosa" msprop:DbSchemaName="dbo" msprop:design-time-name="2b81ef85-6010-4b74-968c-f55377429df5" msprop:FriendlyName="Gaseosa" msprop:TableType="Table" msprop:DbTableName="Gaseosa">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="929d00e8-d326-4f1a-8a86-de2698af05b7" type="xs:int" />
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="64260ca9-c6ae-4ae2-87eb-06af149c6f50">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Precio" msprop:FriendlyName="Precio" msprop:DbColumnName="Precio" msprop:design-time-name="995fc996-100a-4652-8b64-5e5576b1ba72" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Pais" msprop:DbSchemaName="dbo" msprop:design-time-name="edc2dea7-316c-44ea-bbb4-3b2eb7f2c6c3" msprop:FriendlyName="Pais" msprop:TableType="Table" msprop:DbTableName="Pais">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="bafded6a-9da2-41a7-a016-87dbe60e7dcd" type="xs:int" />
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="2c4869f7-ac31-4054-986b-d36f18fe7688">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Sector" msprop:DbSchemaName="dbo" msprop:design-time-name="bb0547ea-a3da-4af7-acd8-49ce45c5db26" msprop:FriendlyName="Sector" msprop:TableType="Table" msprop:DbTableName="Sector">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="3e1eb576-db81-4d58-978a-d7262df17394" type="xs:int" />
+                  <xs:element name="Descripcion" msprop:FriendlyName="Descripcion" msprop:DbColumnName="Descripcion" msprop:design-time-name="5fb65d08-aab2-4758-b20c-a58e4481c51f">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Supervisor" msprop:DbSchemaName="dbo" msprop:design-time-name="e0091642-95f3-42a5-a7ed-fab1afed79ae" msprop:FriendlyName="Supervisor" msprop:TableType="Table" msprop:DbTableName="Supervisor">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="a5d2984c-97a0-4590-81b2-b7e19e167b21" type="xs:int" />
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="fbef5fd6-bbe5-41df-bc6c-881e6e018bcc">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Vendedor" msprop:DbSchemaName="dbo" msprop:design-time-name="a36cf079-d458-47a3-bd1f-94fab33022b1" msprop:FriendlyName="Vendedor" msprop:TableType="Table" msprop:DbTableName="Vendedor">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="485d95db-88ec-4768-b723-d1ee471c78f2" type="xs:int" />
+                  <xs:element name="CodigoSupervisor" msprop:FriendlyName="CodigoSupervisor" msprop:DbColumnName="CodigoSupervisor" msprop:design-time-name="bf767c22-645d-405f-b1bb-0fc67308232a" type="xs:int" />
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="0c0489d0-4785-481b-acc0-fd592af6400d">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Facturas" />
+          <xs:field xpath="IdFactura" />
+        </xs:unique>
+        <xs:unique name="dbo_Gaseosa_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Gaseosa" />
+          <xs:field xpath="Codigo" />
+        </xs:unique>
+        <xs:unique name="dbo_Pais_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Pais" />
+          <xs:field xpath="Codigo" />
+        </xs:unique>
+        <xs:unique name="dbo_Sector_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Sector" />
+          <xs:field xpath="Codigo" />
+        </xs:unique>
+        <xs:unique name="dbo_Supervisor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Supervisor" />
+          <xs:field xpath="Codigo" />
+        </xs:unique>
+        <xs:unique name="dbo_Vendedor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Vendedor" />
+          <xs:field xpath="Codigo" />
+        </xs:unique>
+        <xs:keyref name="FK_Vendedor_Supervisor" refer="dbo_Supervisor_Constraint1">
+          <xs:selector xpath=".//dbo_Vendedor" />
+          <xs:field xpath="CodigoSupervisor" />
+        </xs:keyref>
+        <xs:keyref name="FK_Facturas_Sector" refer="dbo_Sector_Constraint1">
+          <xs:selector xpath=".//dbo_Facturas" />
+          <xs:field xpath="CodigoSector" />
+        </xs:keyref>
+        <xs:keyref name="FK_Facturas_Gaseosa" refer="dbo_Gaseosa_Constraint1">
+          <xs:selector xpath=".//dbo_Facturas" />
+          <xs:field xpath="CodigoGaseosa" />
+        </xs:keyref>
+        <xs:keyref name="FK_Facturas_Pais" refer="dbo_Pais_Constraint1">
+          <xs:selector xpath=".//dbo_Facturas" />
+          <xs:field xpath="CodigoPais" />
+        </xs:keyref>
+        <xs:keyref name="FK_Facturas_Vendedor" refer="dbo_Vendedor_Constraint1">
+          <xs:selector xpath=".//dbo_Facturas" />
+          <xs:field xpath="CodigoVendedor" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Proyecto_x0020_2 xmlns="" />
+  </Schema>
+</DataSourceView>
