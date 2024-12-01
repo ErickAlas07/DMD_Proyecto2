@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Cubo_Proyecto2</Database>
+    <Server>localhost\MSSQLSERVER24</Server>
+    <ConnectionString>Data Source=localhost\MSSQLSERVER24;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>X0g5MCpMCUFhFFlH5WtPVMM7YA0=30/11/2024 9:46:2330/11/2024 9:46:23</TimeStamp>
+        <ID>
+          <String>Proyecto 2</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>p6si5N+xVvkrJY78aMbUmB7depU=30/11/2024 13:00:2830/11/2024 12:45:47</TimeStamp>
+        <ID>
+          <String>Proyecto 2</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>jQukSE1Ofk9Ilpix8voZvzJXaCk=30/11/2024 12:46:2530/11/2024 12:46:24</TimeStamp>
+        <ID>
+          <String>Vendedor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>uGx1QQZmvP8pcRCv0iICEGmXVqw=30/11/2024 12:46:2530/11/2024 12:46:24</TimeStamp>
+        <ID>
+          <String>Pais</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>8W0Ryup4E3DJSf0AxjqaU6xvXBU=30/11/2024 12:46:2530/11/2024 12:46:24</TimeStamp>
+        <ID>
+          <String>Gaseosa</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>c7JE95IIvCWJsNGVFXuOmz9FL80=30/11/2024 12:46:2530/11/2024 12:46:24</TimeStamp>
+        <ID>
+          <String>Sector</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>I9VWX3Ca9IxAPwHZ84xDNuCgkBM=30/11/2024 14:02:0130/11/2024 12:46:24qHSYk8Ev2mV8fue4IhVjfx7Pufc=30/11/2024 12:46:2530/11/2024 12:46:24</TimeStamp>
+        <ID>
+          <String>Proyecto 2</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>DK8ekfoW2oY5FPhXeIGgo/WvKZs=29/11/2024 21:57:1029/11/2024 21:57:10</TimeStamp>
+      <ID>
+        <String>Cubo_Proyecto2</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2024-11-30T20:02:44.316667Z</LastDeployed>
+</DeploymentSnapshot>
