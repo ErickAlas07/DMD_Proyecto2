@@ -1,0 +1,2659 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/28/2024 9:32:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-RMTP6VN"
+  DTS:CreatorName="DESKTOP-RMTP6VN\DELL"
+  DTS:DTSID="{CD57BDD0-B779-45AB-B5C2-731CB317D234}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="17418"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{60FFF9EE-4490-4C56-AEF2-DDF0BA2D07FB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{10459359-2735-4DA6-8426-E6CE40C6B681}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Trabajos y proyectos\Facturas.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{E1406361-5FB6-49BF-9E89-DE68CFDD83DC}"
+      DTS:ObjectName="Administrador de conexiones con Excel 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Trabajos y proyectos\Maestras.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{CE8B9846-7041-4E05-91AA-5C5FB6F1F297}"
+      DTS:ObjectName="Administrador de conexiones con Excel 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Trabajos y proyectos\Países.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+      DTS:CreationName="ADO.NET:System.Data.OleDb.OleDbConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{DB1BD2D8-04FF-4017-AA41-86DC0C9581CF}"
+      DTS:ObjectName="DESKTOP-9G39L8M.Proyecto_2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-9G39L8M;Initial Catalog=Proyecto_2;Provider=SQLOLEDB.1;Integrated Security=SSPI;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Facturas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{7321ED78-61D9-49FC-AB86-047F9A3B8EBD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Facturas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Facturas\Columna derivada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Facturas\Columna derivada.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Columna derivada.Inputs[Entrada de columna derivada].Columns[Fecha]"
+                      cachedDataType="date"
+                      cachedName="Fecha"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Fecha]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\Tarea Facturas\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de columna derivada].Columns[Fecha F]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de columna derivada].Columns[Fecha F]"
+                      name="Fecha F"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_DBDATE)#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Fecha]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)Fecha</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\Tarea Facturas\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Facturas\Conversión de datos"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Serie]"
+                      cachedDataType="r8"
+                      cachedName="Serie"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Serie]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Número]"
+                      cachedDataType="r8"
+                      cachedName="Número"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Número]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Código Sector]"
+                      cachedDataType="r8"
+                      cachedName="Código Sector"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Sector]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Código País]"
+                      cachedDataType="r8"
+                      cachedName="Código País"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código País]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Código Vendedor]"
+                      cachedDataType="r8"
+                      cachedName="Código Vendedor"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Vendedor]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Código Gaseosa]"
+                      cachedDataType="r8"
+                      cachedName="Código Gaseosa"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Gaseosa]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Merma]"
+                      cachedDataType="r8"
+                      cachedName="Merma"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Merma]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Subtotal]"
+                      cachedDataType="r8"
+                      cachedName="Subtotal"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Subtotal]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[IGV]"
+                      cachedDataType="r8"
+                      cachedName="IGV"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[IGV]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Total]"
+                      cachedDataType="r8"
+                      cachedName="Total"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Total]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Serie]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Serie]"
+                      name="Number Serie"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Serie]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number]"
+                      name="Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Número]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Sector]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Sector]"
+                      name="Number Código Sector"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Sector]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código País]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código País]"
+                      name="Number Código País"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código País]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Vendedor]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Vendedor]"
+                      name="Number Código Vendedor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Vendedor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Gaseosa]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Gaseosa]"
+                      name="Number Código Gaseosa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Gaseosa]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Merma]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Merma]"
+                      name="Number Merma"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Merma]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Subtotal Decimal]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Subtotal Decimal]"
+                      name="Subtotal Decimal"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Subtotal]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[IGV Decimal]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[IGV Decimal]"
+                      name="IGV Decimal"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[IGV]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Total Decimal]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Total Decimal]"
+                      name="Total Decimal"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Total]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Facturas\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[Facturas]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Facturas\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ppto]"
+                      cachedDataType="r8"
+                      cachedName="Ppto"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Ppto]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Ppto]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Cantidad]"
+                      cachedDataType="r8"
+                      cachedName="Cantidad"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cantidad]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Number Serie]"
+                      cachedDataType="ui4"
+                      cachedName="Number Serie"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Serie]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Serie]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Number]"
+                      cachedDataType="ui4"
+                      cachedName="Number"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Number Código Sector]"
+                      cachedDataType="ui2"
+                      cachedName="Number Código Sector"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código Sector]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Sector]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Number Código País]"
+                      cachedDataType="ui2"
+                      cachedName="Number Código País"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código País]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código País]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Number Código Vendedor]"
+                      cachedDataType="ui2"
+                      cachedName="Number Código Vendedor"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código Vendedor]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Vendedor]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Number Código Gaseosa]"
+                      cachedDataType="ui2"
+                      cachedName="Number Código Gaseosa"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código Gaseosa]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Código Gaseosa]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Number Merma]"
+                      cachedDataType="ui2"
+                      cachedName="Number Merma"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Merma]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Number Merma]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Subtotal Decimal]"
+                      cachedDataType="decimal"
+                      cachedName="Subtotal Decimal"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Subtotal Decimal]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Subtotal Decimal]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[IGV Decimal]"
+                      cachedDataType="decimal"
+                      cachedName="IGV Decimal"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IGV Decimal]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[IGV Decimal]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Total Decimal]"
+                      cachedDataType="decimal"
+                      cachedName="Total Decimal"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Total Decimal]"
+                      lineageId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Total Decimal]" />
+                    <inputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Fecha F]"
+                      cachedDataType="dbDate"
+                      cachedName="Fecha F"
+                      externalMetadataColumnId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Fecha F]"
+                      lineageId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de columna derivada].Columns[Fecha F]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Serie]"
+                      dataType="i8"
+                      name="Number Serie" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number]"
+                      dataType="i8"
+                      name="Number" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Fecha F]"
+                      dataType="wstr"
+                      length="10"
+                      name="Fecha F" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código Sector]"
+                      dataType="i4"
+                      name="Number Código Sector" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código País]"
+                      dataType="i4"
+                      name="Number Código País" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código Vendedor]"
+                      dataType="i4"
+                      name="Number Código Vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Código Gaseosa]"
+                      dataType="i4"
+                      name="Number Código Gaseosa" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Ppto]"
+                      dataType="r8"
+                      name="Ppto" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cantidad]"
+                      dataType="r8"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Number Merma]"
+                      dataType="i4"
+                      name="Number Merma" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Subtotal Decimal]"
+                      dataType="numeric"
+                      name="Subtotal Decimal"
+                      precision="28"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IGV Decimal]"
+                      dataType="numeric"
+                      name="IGV Decimal"
+                      precision="28"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Total Decimal]"
+                      dataType="numeric"
+                      name="Total Decimal"
+                      precision="28"
+                      scale="3" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Facturas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Facturas\Facturas"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Facturas"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Factura$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Facturas\Facturas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Serie]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Serie]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Serie]"
+                      name="Serie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Número]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Número]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Número]"
+                      name="Número"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Fecha]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Fecha]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Fecha]"
+                      name="Fecha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Sector]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código Sector]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Sector]"
+                      name="Código Sector"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código País]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código País]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código País]"
+                      name="Código País"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Vendedor]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código Vendedor]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Vendedor]"
+                      name="Código Vendedor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Gaseosa]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código Gaseosa]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Código Gaseosa]"
+                      name="Código Gaseosa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Ppto]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Ppto]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Ppto]"
+                      name="Ppto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Cantidad]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Cantidad]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Cantidad]"
+                      name="Cantidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Merma]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Merma]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Merma]"
+                      name="Merma"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Subtotal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Subtotal]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Subtotal]"
+                      name="Subtotal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[IGV]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[IGV]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[IGV]"
+                      name="IGV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Total]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Total]"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].Columns[Total]"
+                      name="Total"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Serie]"
+                      dataType="r8"
+                      name="Serie" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Número]"
+                      dataType="r8"
+                      name="Número" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Fecha]"
+                      dataType="date"
+                      name="Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código Sector]"
+                      dataType="r8"
+                      name="Código Sector" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código País]"
+                      dataType="r8"
+                      name="Código País" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código Vendedor]"
+                      dataType="r8"
+                      name="Código Vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Código Gaseosa]"
+                      dataType="r8"
+                      name="Código Gaseosa" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Ppto]"
+                      dataType="r8"
+                      name="Ppto" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Cantidad]"
+                      dataType="r8"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Merma]"
+                      dataType="r8"
+                      name="Merma" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Subtotal]"
+                      dataType="r8"
+                      name="Subtotal" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[IGV]"
+                      dataType="r8"
+                      name="IGV" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel].ExternalColumns[Total]"
+                      dataType="r8"
+                      name="Total" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Serie]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Serie]"
+                      name="Serie" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Número]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Número]"
+                      name="Número" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Fecha]"
+                      dataType="date"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Fecha]"
+                      name="Fecha" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código Sector]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código Sector]"
+                      name="Código Sector" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código País]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código País]"
+                      name="Código País" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código Vendedor]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código Vendedor]"
+                      name="Código Vendedor" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código Gaseosa]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Código Gaseosa]"
+                      name="Código Gaseosa" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Ppto]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Ppto]"
+                      name="Ppto" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Cantidad]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Cantidad]"
+                      name="Cantidad" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Merma]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Merma]"
+                      name="Merma" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Subtotal]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Subtotal]"
+                      name="Subtotal" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[IGV]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[IGV]"
+                      name="IGV" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Total]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[Total]"
+                      name="Total" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Facturas\Facturas.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Facturas.Paths[Salida de columna derivada]"
+              endId="Package\Tarea Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de columna derivada"
+              startId="Package\Tarea Facturas\Columna derivada.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\Tarea Facturas.Paths[Salida de conversión de datos]"
+              endId="Package\Tarea Facturas\Columna derivada.Inputs[Entrada de columna derivada]"
+              name="Salida de conversión de datos"
+              startId="Package\Tarea Facturas\Conversión de datos.Outputs[Salida de conversión de datos]" />
+            <path
+              refId="Package\Tarea Facturas.Paths[Salida de origen de Excel]"
+              endId="Package\Tarea Facturas\Conversión de datos.Inputs[Entrada de conversión de datos]"
+              name="Salida de origen de Excel"
+              startId="Package\Tarea Facturas\Facturas.Outputs[Salida de origen de Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Maestras"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{B1D203CC-33AC-4C77-B91D-295B2E2E2EA6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Maestras"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Maestras\Destino Gaseosas"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino Gaseosas"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[Gaseosa]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Destino Gaseosas.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].Columns[Precio]"
+                      cachedDataType="r8"
+                      cachedName="Precio"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Precio]"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Precio]" />
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].Columns[Código Gaseosa]"
+                      cachedDataType="r8"
+                      cachedName="Código Gaseosa"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Código Gaseosa]" />
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].Columns[Nombre Gaseosa]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre Gaseosa"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Nombre Gaseosa]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      dataType="i4"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Precio]"
+                      dataType="numeric"
+                      name="Precio"
+                      precision="28"
+                      scale="3" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Destino Gaseosas.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Gaseosas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Gaseosas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Gaseosas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Maestras\Destino Sector"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino Sector"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[Sector]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Destino Sector.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET].Columns[Código Sector]"
+                      cachedDataType="r8"
+                      cachedName="Código Sector"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].Columns[Código Sector]" />
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET].Columns[Descripción Sector]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Descripción Sector"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descripcion]"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].Columns[Descripción Sector]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      dataType="i4"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descripcion]"
+                      dataType="wstr"
+                      length="50"
+                      name="Descripcion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Destino Sector.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Sector.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Sector.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Sector.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Sector.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Maestras\Destino Supervisor"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino Supervisor"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[Supervisor]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Destino Supervisor.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET].Columns[Código Supervisor]"
+                      cachedDataType="r8"
+                      cachedName="Código Supervisor"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].Columns[Código Supervisor]" />
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET].Columns[Nombre Supervisor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre Supervisor"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].Columns[Nombre Supervisor]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      dataType="i4"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="Nombre" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Destino Supervisor.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Supervisor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Supervisor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Supervisor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Supervisor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Maestras\Destino Vendedor"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino Vendedor"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[Vendedor]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Destino Vendedor.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].Columns[Código Vendedor]"
+                      cachedDataType="r8"
+                      cachedName="Código Vendedor"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Código Vendedor]" />
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].Columns[Código Supervisor]"
+                      cachedDataType="r8"
+                      cachedName="Código Supervisor"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo_Supervisor]"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Código Supervisor]" />
+                    <inputColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].Columns[Nombre Vendedor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre Vendedor"
+                      externalMetadataColumnId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Nombre Vendedor]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      dataType="i4"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo_Supervisor]"
+                      dataType="i4"
+                      name="Codigo_Supervisor" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="Nombre" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Destino Vendedor.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Vendedor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Destino Vendedor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Destino Vendedor.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Maestras\Origen Gaseosas"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Origen Gaseosas"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Gaseosa$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Origen Gaseosas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Código Gaseosa]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].ExternalColumns[Código Gaseosa]"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Código Gaseosa]"
+                      name="Código Gaseosa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Nombre Gaseosa]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].ExternalColumns[Nombre Gaseosa]"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Nombre Gaseosa]"
+                      name="Nombre Gaseosa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Precio]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].ExternalColumns[Precio]"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].Columns[Precio]"
+                      name="Precio"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].ExternalColumns[Código Gaseosa]"
+                      dataType="r8"
+                      name="Código Gaseosa" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].ExternalColumns[Nombre Gaseosa]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre Gaseosa" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel].ExternalColumns[Precio]"
+                      dataType="r8"
+                      name="Precio" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[Código Gaseosa]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[Código Gaseosa]"
+                      name="Código Gaseosa" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[Nombre Gaseosa]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[Nombre Gaseosa]"
+                      name="Nombre Gaseosa" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[Precio]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[Precio]"
+                      name="Precio" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Maestras\Origen Sector"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Origen Sector"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Sector$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Origen Sector.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].Columns[Código Sector]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].ExternalColumns[Código Sector]"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].Columns[Código Sector]"
+                      name="Código Sector"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].Columns[Descripción Sector]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].ExternalColumns[Descripción Sector]"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].Columns[Descripción Sector]"
+                      name="Descripción Sector"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].ExternalColumns[Código Sector]"
+                      dataType="r8"
+                      name="Código Sector" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel].ExternalColumns[Descripción Sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="Descripción Sector" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[Código Sector]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[Código Sector]"
+                      name="Código Sector" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[Descripción Sector]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[Descripción Sector]"
+                      name="Descripción Sector" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Maestras\Origen Supervisor"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Origen Supervisor"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Supervisor$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Origen Supervisor.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].Columns[Código Supervisor]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].ExternalColumns[Código Supervisor]"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].Columns[Código Supervisor]"
+                      name="Código Supervisor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].Columns[Nombre Supervisor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].ExternalColumns[Nombre Supervisor]"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].Columns[Nombre Supervisor]"
+                      name="Nombre Supervisor"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].ExternalColumns[Código Supervisor]"
+                      dataType="r8"
+                      name="Código Supervisor" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel].ExternalColumns[Nombre Supervisor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre Supervisor" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[Código Supervisor]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[Código Supervisor]"
+                      name="Código Supervisor" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[Nombre Supervisor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[Nombre Supervisor]"
+                      name="Nombre Supervisor" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Maestras\Origen Vendedor"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Origen Vendedor"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Vendedor$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Maestras\Origen Vendedor.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Código Vendedor]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].ExternalColumns[Código Vendedor]"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Código Vendedor]"
+                      name="Código Vendedor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Nombre Vendedor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].ExternalColumns[Nombre Vendedor]"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Nombre Vendedor]"
+                      name="Nombre Vendedor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Código Supervisor]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].ExternalColumns[Código Supervisor]"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].Columns[Código Supervisor]"
+                      name="Código Supervisor"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].ExternalColumns[Código Vendedor]"
+                      dataType="r8"
+                      name="Código Vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].ExternalColumns[Nombre Vendedor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre Vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel].ExternalColumns[Código Supervisor]"
+                      dataType="r8"
+                      name="Código Supervisor" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[Código Vendedor]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[Código Vendedor]"
+                      name="Código Vendedor" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[Nombre Vendedor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[Nombre Vendedor]"
+                      name="Nombre Vendedor" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[Código Supervisor]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[Código Supervisor]"
+                      name="Código Supervisor" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Maestras.Paths[Salida de origen de Excel]"
+              endId="Package\Tarea Maestras\Destino Gaseosas.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de Excel"
+              startId="Package\Tarea Maestras\Origen Gaseosas.Outputs[Salida de origen de Excel]" />
+            <path
+              refId="Package\Tarea Maestras.Paths[Salida de origen de Excel1]"
+              endId="Package\Tarea Maestras\Destino Vendedor.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de Excel"
+              startId="Package\Tarea Maestras\Origen Vendedor.Outputs[Salida de origen de Excel]" />
+            <path
+              refId="Package\Tarea Maestras.Paths[Salida de origen de Excel2]"
+              endId="Package\Tarea Maestras\Destino Supervisor.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de Excel"
+              startId="Package\Tarea Maestras\Origen Supervisor.Outputs[Salida de origen de Excel]" />
+            <path
+              refId="Package\Tarea Maestras.Paths[Salida de origen de Excel3]"
+              endId="Package\Tarea Maestras\Destino Sector.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de Excel"
+              startId="Package\Tarea Maestras\Origen Sector.Outputs[Salida de origen de Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Paises"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{36238F1D-9272-4198-9785-5BF4763649D0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Paises"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Paises\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[dbo].[Pais]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Paises\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-9G39L8M.Proyecto_2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Código País]"
+                      cachedDataType="r8"
+                      cachedName="Código País"
+                      externalMetadataColumnId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Código País]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      dataType="i4"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="Nombre" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Paises\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Paises\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Paises\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Paises\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Paises\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Paises\Origen de Excel"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Origen de Excel"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">País$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Paises\Origen de Excel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Código País]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Código País]"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Código País]"
+                      name="Código País"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Nombre]"
+                      length="255"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Código País]"
+                      dataType="r8"
+                      name="Código País" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Código País]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Código País]"
+                      name="Código País" />
+                    <outputColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Nombre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Paises.Paths[Salida de origen de Excel]"
+              endId="Package\Tarea Paises\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de Excel"
+              startId="Package\Tarea Paises\Origen de Excel.Outputs[Salida de origen de Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Tarea Facturas"
+          TopLeft="39.12499682419,81.399998651743" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Tarea Maestras"
+          TopLeft="211,82" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Tarea Paises"
+          TopLeft="386,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Facturas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,43"
+          Id="Package\Tarea Facturas\Conversión de datos"
+          TopLeft="96.6666666666666,109.166666666667" />
+        <NodeLayout
+          Size="120,43"
+          Id="Package\Tarea Facturas\Facturas"
+          TopLeft="118.666666666667,24.1666666666667" />
+        <NodeLayout
+          Size="164,43"
+          Id="Package\Tarea Facturas\Columna derivada"
+          TopLeft="103,193.833333333333" />
+        <NodeLayout
+          Size="177,43"
+          Id="Package\Tarea Facturas\Destino de ADO NET"
+          TopLeft="98.3333333333331,290.833333333333" />
+        <EdgeLayout
+          Id="Package\Tarea Facturas.Paths[Salida de origen de Excel]"
+          TopLeft="181.333333333333,66.8333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.3333333333334"
+              Start="0,0"
+              End="0,34.8333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Facturas.Paths[Salida de conversión de datos]"
+          TopLeft="184.5,151.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Facturas.Paths[Salida de columna derivada]"
+          TopLeft="186,236.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.3333333333333"
+              Start="0,0"
+              End="0,46.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Facturas\Facturas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Facturas\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Tarea Maestras">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Tarea Maestras\Destino Vendedor"
+          TopLeft="241,72" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Tarea Maestras\Origen Gaseosas"
+          TopLeft="30.5,18.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Tarea Maestras\Origen Vendedor"
+          TopLeft="30,72" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Tarea Maestras\Origen Supervisor"
+          TopLeft="32,126" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Tarea Maestras\Origen Sector"
+          TopLeft="36,175" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Tarea Maestras\Destino Gaseosas"
+          TopLeft="237,20" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Tarea Maestras\Destino Sector"
+          TopLeft="241,181" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Tarea Maestras\Destino Supervisor"
+          TopLeft="239,130" />
+        <EdgeLayout
+          Id="Package\Tarea Maestras.Paths[Salida de origen de Excel3]"
+          TopLeft="179,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62,0"
+              Start="0,0"
+              End="54.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Maestras.Paths[Salida de origen de Excel2]"
+          TopLeft="195,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44,0"
+              Start="0,0"
+              End="36.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="36.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Maestras.Paths[Salida de origen de Excel1]"
+          TopLeft="189,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,0"
+              Start="0,0"
+              End="44.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Maestras.Paths[Salida de origen de Excel]"
+          TopLeft="188.5,40.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.5,0"
+              Start="0,0"
+              End="41,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Destino Vendedor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Origen Gaseosas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Origen Vendedor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Origen Supervisor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Origen Sector">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Destino Gaseosas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Destino Sector">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Maestras\Destino Supervisor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Tarea Paises">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Tarea Paises\Origen de Excel"
+          TopLeft="51,29" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Paises\Destino de ADO NET"
+          TopLeft="234,29" />
+        <EdgeLayout
+          Id="Package\Tarea Paises.Paths[Salida de origen de Excel]"
+          TopLeft="204,50">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30,0"
+              Start="0,0"
+              End="22.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Paises\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Paises\Origen de Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
